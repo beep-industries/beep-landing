@@ -1,0 +1,46 @@
+---
+// WhyBeep component
+import { Icon } from 'astro-icon/components';
+import type { FeatureCard, SectionProps } from '../types';
+
+export interface Props extends SectionProps {}
+
+const { id = "pourquoi", className = "py-20 bg-white" }: Props = Astro.props;
+
+const features: FeatureCard[] = [
+  {
+    icon: "lucide:book-open-check",
+    title: "Open Source",
+    description: "Code transparent, communauté ouverte. Participez au développement et ajoutez votre grain de sel!"
+  },
+  {
+    icon: "lucide:zap", 
+    title: "Moderne",
+    description: "Interface épurée, technologies récentes. Une expérience utilisateur fluide et performante."
+  },
+  {
+    icon: "lucide:users",
+    title: "Communauté", 
+    description: "Créé par des étudiants passionnés. Un projet collaboratif où chaque contribution compte."
+  }
+];
+---
+
+<section id={id} class={className}>
+  <div class="container mx-auto px-6 max-w-4xl">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-purple-900">
+      Pourquoi Beep ?
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {features.map((feature: FeatureCard) => (
+        <div class="text-center group">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors duration-300">
+            <Icon name={feature.icon} class="w-8 h-8 text-purple-600" />
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-purple-900">{feature.title}</h3>
+          <p class="text-gray-600">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

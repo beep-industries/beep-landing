@@ -1,0 +1,40 @@
+---
+import type { BaseLayoutProps } from '../types';
+
+export interface Props extends BaseLayoutProps {}
+
+const { 
+  title = "Beep", 
+  description = "Beep - Un Discord-like open-source. Découvrez cette alternative à Discord et contribuez au développement de celle-ci !" 
+}: Props = Astro.props;
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    
+    <script>
+      // Smooth scroll for Découvrir button
+      document.addEventListener('DOMContentLoaded', (): void => {
+        const discoverBtn: HTMLElement | null = document.getElementById('discover-btn');
+        const whySection: HTMLElement | null = document.getElementById('pourquoi');
+        
+        if (discoverBtn && whySection) {
+          discoverBtn.addEventListener('click', (): void => {
+            whySection.scrollIntoView({
+              behavior: 'smooth'
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

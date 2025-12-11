@@ -1,43 +1,65 @@
-# Astro Starter Kit: Minimal
+# Beep Landing Page
 
-```sh
-npm create astro@latest -- --template minimal
+Landing page for Beep, a modern open-source alternative to Discord.
+
+## Structure
+
+### Modular Architecture
+
+```
+src/
+├── components/          # Reusable components
+│   ├── Hero.astro              # Main hero section
+│   ├── WhyBeep.astro           # "Why Beep?" section
+│   ├── HowToContribute.astro   # Contribution section
+│   ├── JoinCommunity.astro     # Join section
+│   └── Footer.astro            # Footer
+├── layouts/             # Base layouts
+│   └── BaseLayout.astro        # Common HTML structure
+├── pages/               # Site pages
+│   └── index.astro             # Homepage
+└── styles/              # Global styles
+    └── global.css              # Global CSS and Tailwind
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Components
 
-## 🚀 Project Structure
+- **BaseLayout** : Base HTML structure with head, meta tags and scripts
+- **Hero** : Welcome section with title, description and discover button
+- **WhyBeep** : Key advantages of Beep (Open Source, Modern, Community)
+- **HowToContribute** : Guide for developers and community
+- **JoinCommunity** : Links to GitHub and Discord
+- **Footer** : Project information and important links (Github)
 
-Inside of your Astro project, you'll see the following folders and files:
+## Development
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+### Prereqquisites
+
+- Node.js 18+
+- pnpm
+
+### Installation
+
+```bash
+pnpm i
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Development
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+pnpm dev
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Build
 
-## 🧞 Commands
+```bash
+pnpm build
+```
 
-All commands are run from the root of the project, from a terminal:
+## Technologies
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Astro](https://astro.build) - SEO friendly, SSR/SSG franmework
+- [Tailwind CSS](https://tailwindcss.com) - CSS Framework
+- Typescript
+- Astro Icons - Icons integration
+- Iconify - Icons library
